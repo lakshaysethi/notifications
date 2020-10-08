@@ -8,9 +8,16 @@ from django.views.decorators.csrf import csrf_exempt
 from webpush import send_user_notification
 import json
 
+from django.shortcuts import render, get_object_or_404
+from django.conf import settings
+
 @require_GET
 def home(request):
-    return HttpResponse('<h1>Home Page<h1>')
+   webpush_settings = getattr(settings, 'WEBPUSH_SETTINGS', {})
+   vapid_key = webpush_settings.get('VAPID_PUBLIC_KEY')
+   user = request.user
+   return render(request, 'home.html', {user: user, 'vapid_key': vapid_key})
+
 
 
 
