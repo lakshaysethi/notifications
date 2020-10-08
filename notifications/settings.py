@@ -25,7 +25,7 @@ SECRET_KEY = '=q&lm&zy(z(uc3znpv$tgxvesda5)uykmvsd7j5y&io1u0ny2l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['63aa80dbb8c2.ngrok.io','127.0.0.1']
+ALLOWED_HOSTS = ['63aa80dbb8c2.ngrok.io','127.0.0.1','notifications-test-gb.herokuapp.com']
 
 
 # Application definition
